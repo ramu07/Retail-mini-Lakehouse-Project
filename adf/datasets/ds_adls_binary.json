@@ -1,0 +1,31 @@
+{
+  "name": "ds_adls_binary",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "ls_adls_gen2",
+      "type": "LinkedServiceReference"
+    },
+    "annotations": [],
+    "type": "Binary",
+    "typeProperties": {
+      "location": {
+        "type": "AzureBlobFSLocation",
+        "fileSystem": "@dataset().fileSystem",
+        "folderPath": "@dataset().directory",
+        "fileName": "@dataset().fileName"
+      }
+    },
+    "parameters": {
+      "fileSystem": {
+        "type": "string"
+      },
+      "directory": {
+        "type": "string"
+      },
+      "fileName": {
+        "type": "string"
+      }
+    }
+  },
+  "type": "Microsoft.DataFactory/factories/datasets"
+}
